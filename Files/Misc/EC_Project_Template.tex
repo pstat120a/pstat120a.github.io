@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage[margin = 1in]{geometry}
+
+%~~ TITLE INFORMATION; EDIT TO INCLUDE YOUR INFORMATION
+\title{Your Title Here}
+\author{List your Teammates Here, Separated by Commas}
+\date{\today}
+%~~~
+
+
+%~~ PREAMBLE; NO NEED TO EDIT ANY OF THIS
+\usepackage{amsmath}        % basic math package
+\usepackage{amssymb}        % basic math package
+\usepackage{amsfonts}       % basic math package
+\usepackage{dsfont}         % used for additional math support
+\usepackage{enumitem}       % used for slightly nicer enumerated lists
+\usepackage{hyperref}       % used for hyperlinks
+
+\newcommand{\Prob}{\mathds{P}}      % Probability measure symbol
+\newcommand{\E}{\mathds{E}}         % Expectation operator
+\newcommand{\Var}{\mathrm{Var}}     % Variance operator
+\newcommand{\Cov}{\mathrm{Cov}}     % Covariance operator
+\newcommand{\Corr}{\mathrm{Corr}}   % Correlation operator
+\newcommand{\1}{\mathds{1}}         % Indicator symbol
+
+\newcommand{\R}{\mathds{R}}     % set of real numbers
+\newcommand{\Z}{\mathds{Z}}     % set of integers
+\newcommand{\N}{\mathds{N}}     % set of natural numbers
+
+\setlength{\parindent}{0pt}     % undo automatic indentation of first line
+
+\hypersetup{                    % aesthetic setup for hyperlinks
+    colorlinks = true,
+    linkcolor = blue,
+    urlcolor = cyan
+}
+    
+%~~
+
+
+
+\begin{document}
+
+\maketitle
+
+%%~~ THIS IS WHERE THE DOCUMENT BEGINS. REPLACE TEXT BELOW THIS LINE WITH WHATEVER YOU NEED.
+
+
+\section{Glossary of Terms}
+
+To make an enumerated list with Arabic numerals, you can use
+
+\begin{enumerate}[label = (\arabic*)]
+
+    \item First item
+    \item Second item
+    
+\end{enumerate}
+
+You can also make a list with boldfaced Roman numerals, and tighter spacing:
+
+\begin{enumerate}[label = \textbf{(\roman*)}, itemsep = 0mm]
+
+    \item First item
+    \item Second item
+    
+\end{enumerate}
+
+
+
+\section{Important Formulae}
+
+Inline equations can be enclosed by single dollar signs: $\cos(x + y)$. (If you need to write an actual dollar sign, use the \textbackslash \  key right before the dollar sign: \$). Display style equations can be enclosed in double dollar signs, like
+$$ \Prob(X \in A) = \int_{A} f_X(x) \ \mathrm{d}x  $$
+Multi-line equations can be neatly aligned using the \verb|align*| environment:
+\begin{align*}
+    (x + y)^3   & = \sum_{k=0}^{3} \binom{3}{k} x^k y^{3 - k}   \\
+                & = \binom{3}{0} x^0 y^{3 - 0} + \binom{3}{1} x^1 y^{3 - 1} + \binom{3}{2} x^2 y^{3 - 2} + \binom{3}{3} x^3 y^{3 - 3}  \\
+                & = y^3 + 3 x y^2 + 3 x^2 y + x^3  
+\end{align*}
+
+
+
+\section{Three Homework Problems}
+
+\textbf{Boldface} text should be enclosed in a \verb|\boldface{}| environment; \emph{italicized} text can be enclosed in a \verb|\emph{}| environment, and \underline{underlined} text can be enclosed in a \verb|\underline{}| environment.
+
+
+
+\section{Three Additional Problems}
+
+If you know you will be referencing a particular equation a lot, I recommend using the \verb|equation| environment:
+\begin{equation}{ \label{eq:eq1}
+    \E[g(X, Y)]   = \iint_{\R^2} g(x, y) f_{X, Y}(x, y) \ \mathrm{d}A
+}\end{equation}
+In this way, the equation not only gets a number associated with it but you can automatically refer back to it using the \verb|\ref{}| command, like (\ref{eq:eq1}) [though you may need to typeset your document twice in order for the numbers to show up properly].
+
+
+\section{Works Cited}
+
+If you would like to hyperlink text, you can use the \verb|\href{}{}| command, like \href{https://pstat120a.github.io}{this}.
+
+\end{document}
